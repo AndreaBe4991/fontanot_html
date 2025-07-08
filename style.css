@@ -6,7 +6,7 @@ body {
   margin: 0;
   background-color: #e6f0fa; /* blu chiaro */
   font-family: "Lato", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   margin: 0;
   padding: 0;
   padding-top: 40px;
@@ -527,8 +527,9 @@ h4 {
   margin-left: auto;
   margin-right: auto;
   background: linear-gradient(90deg, #003366, #0099cc);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
+  background-clip: text;               /* proprietà standard */
+  -webkit-background-clip: text;       /* per Chrome, Safari, Edge */
+  -webkit-text-fill-color: transparent;
 position: relative;
 animation: expand 1s ease forwards;
 }
@@ -1004,8 +1005,9 @@ animation: expand 1s ease forwards;
   width: 50%;
   font-weight: 900;
   background: linear-gradient(90deg, #003366, #0099cc);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
+  background-clip: text;               /* proprietà standard */
+  -webkit-background-clip: text;       /* per Chrome, Safari, Edge */
+  -webkit-text-fill-color: transparent;
 }
 
 .titolo-griglia i {
