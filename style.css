@@ -154,9 +154,11 @@ h4 {
 
 /* Navbar */
 .navbar {
-  background-color: #e9edf1;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-   padding: 0.3rem 0;
+background: linear-gradient(90deg, #e9edf1 0%, #dae2e9 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  padding: 0.5rem 0;
+
   position: static;
   top: 48px; /* fa sì che sia subito sotto la topbar */
   z-index: 999;
@@ -184,8 +186,10 @@ h4 {
 
 .navbar-brand span {
   color: #003366;
-  font-weight: 500;
-  font-size: 1.4rem;
+  font-weight: 600;
+  font-size: 1.5rem;
+  letter-spacing: 1.5px;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.064);
   text-transform: uppercase;
   font-family: "Playfair Display", serif;
   letter-spacing: 1px;
@@ -238,6 +242,14 @@ h4 {
   font-size: 1.6rem;
   color: #003366;
   cursor: pointer;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.menu-toggle:hover {
+  background-color: rgba(0, 188, 212, 0.2);
+  transform: rotate(90deg);
+  color: #013440;
 }
 
 /* ICON STYLE (Font Awesome) */
