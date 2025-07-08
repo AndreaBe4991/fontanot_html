@@ -154,7 +154,7 @@ h4 {
 
 /* Navbar */
 .navbar {
-background: linear-gradient(90deg, #ebebeb 0%, #e4e4e4 100%);
+background: linear-gradient(90deg, #f7f7f7 0%, #ededed 100%);
   color: white;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   padding: 0.5rem 0;
@@ -588,6 +588,8 @@ animation: expand 1s ease forwards;
   scroll-padding-right: 1rem;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
+    margin: 0 auto;
+  justify-content: center; /* centra i figli */
 }
 
 .servizi-grid::-webkit-scrollbar {
@@ -763,8 +765,8 @@ animation: expand 1s ease forwards;
 .servizio-dettaglio p {
   margin: 0 0 1rem 0; /* margin-bottom 1rem */
 }
-.servizio-dettaglio:nth-child(odd) {
-  background: linear-gradient(135deg, #f7fafd, #f8f3f3);
+.servizio-dettaglio:nth-child(even) {
+  background: linear-gradient(135deg, #eef6fa, #fdfdfd);
 }
 
 
@@ -797,8 +799,8 @@ animation: expand 1s ease forwards;
 
 .servizio-header h4 {
   font-weight: 500;
-    font-size: 1.4rem;
-  line-height: 1.4;
+    font-size: 1.8rem;
+  line-height: 1;
   text-align: center;
   min-height: 4.2rem; /* spazio per due righe */
   display: flex;
@@ -810,8 +812,9 @@ animation: expand 1s ease forwards;
   text-align: center;
   position: relative;
   padding-bottom: 8px;
-  margin-top: 1.3rem;
-  text-transform: uppercase;
+  margin-top: 1.4rem;
+  font-family: 'Merriweather', serif;
+  font-variant: small-caps;
 }
 
 /* Linea orizzontale sotto il titolo */
@@ -831,9 +834,9 @@ animation: expand 1s ease forwards;
 
 /* DESCRIZIONE */
 .descrizione-servizio {
-  font-size: 1.125rem;
+  font-size: 1.12rem;
   color: #013440;
-   margin: 0 0 1rem 0; /* margine bottom 1rem */
+  margin-top:2rem; /* margine bottom 1rem */
   font-weight: 400;
   min-height: 150px; /* Regola in base ai contenuti */
   width: 100%;
@@ -928,10 +931,11 @@ animation: expand 1s ease forwards;
   backdrop-filter: blur(0.5px); /* vetro satinato */
   border: 1px solid rgba(255 255 255 / 0.3);
   transition: color 0.3s ease;
-  font-family: "Playfair Display", serif;
+    font-family: 'Merriweather', serif;
+  text-transform: uppercase ;
   font-weight: 400;
   font-style: normal;
-  text-transform: uppercase;
+
 }
 
 .mezzo p:hover {
@@ -942,10 +946,11 @@ animation: expand 1s ease forwards;
   padding: 1rem 0;
   text-align: center;
   color: rgb(22, 54, 124);
-  font-family: "Playfair Display", serif;
+ text-transform: uppercase;
   font-weight: 400;
   font-style: normal;
-  text-transform: uppercase;
+   font-family: 'Merriweather', serif;
+
 }
 
 .stats-wrapper {
@@ -979,6 +984,7 @@ animation: expand 1s ease forwards;
 
 .numero {
   font-size: 2.5rem;
+   font-family: 'Merriweather', serif;
 }
 
 .label {
@@ -1333,6 +1339,15 @@ color: #ccc;
     .hero-text-box {
     padding: 1.5rem;
   }
+  .hero-text-box p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
+  }
+  .hero-text-box .strong {
+    font-weight: 600;
+    color: #003366;
+  }
   .servizio {
     opacity: 1 !important;
     transform: none !important;
@@ -1401,7 +1416,7 @@ color: #ccc;
   }
 
   .servizio-header h4 {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     margin-top: 1rem;
   }
 
@@ -1468,7 +1483,7 @@ color: #ccc;
   }
 
   .mezzo p {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     padding: 1rem 1rem;
     margin-bottom: 2rem;
     max-width: 100%;
@@ -1486,11 +1501,11 @@ color: #ccc;
   }
 
   .numero {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   .label {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 
   .chi-siamo-content {
@@ -1505,7 +1520,7 @@ color: #ccc;
 
   .chi-siamo-text {
     font-size: 1rem;
-    text-align: justify;
+    text-align: center;
   }
 
   .chi-siamo-img img {
@@ -1618,6 +1633,34 @@ color: #ccc;
       transform: translateX(-50%);
     }
   }
+}
 
+
+
+
+@media (min-width: 1720px) {
+  .grid-servizi-equal {
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%; /* opzionale, per non estendere troppo la grid */
+    margin: 0 auto; /* centra la grid */
+  }
+
+  .servizi-intro {
+  /* più larga */
+    width: 100%;          /* o puoi usare width: 100% per tutta la larghezza */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 3rem;  /* un po' più di padding laterale */
+    padding-right: 3rem;
+  }
+  
+  .servizi-grid {
+    gap: 4rem; /* aumenta lo spazio tra le card */
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+   .chi-siamo-text {
+    text-align: center;
+  }
 
 }
