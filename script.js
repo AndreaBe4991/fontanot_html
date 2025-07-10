@@ -110,53 +110,6 @@ document.addEventListener("DOMContentLoaded", function () {
   if (stats) counterObserver.observe(stats);
 });
 
-// Effetto typewriter per la sezione "Insieme a te"
-
-document.addEventListener("DOMContentLoaded", function () {
-  const phrases = [
-    "Insieme a te con esperienza, trasparenza e professionalità,",
-    "per risolvere i tuoi problemi."
-  ];
-
-  let i = 0, j = 0;
-  const el = document.getElementById("typewriter");
-  let typingStarted = false;
-
-  function typePhrase() {
-    if (i >= phrases.length) return;
-
-    const current = phrases[i];
-    if (j < current.length) {
-      el.textContent += current[j];
-      j++;
-      setTimeout(typePhrase, 60);
-    } else {
-      el.textContent += "\n";
-      i++;
-      j = 0;
-      setTimeout(typePhrase, 500);
-    }
-  }
-
-  if (window.innerWidth >= 768) {
-    const typewriterObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting && !typingStarted) {
-          typingStarted = true;
-          typePhrase();
-          typewriterObserver.disconnect();
-        }
-      });
-    }, { threshold: 0.3 });
-
-    const target = document.querySelector('.mezzo');
-    if (target) typewriterObserver.observe(target);
-  } else {
-    if (el) {
-      el.textContent = "Insieme a te con esperienza, trasparenza e professionalità,\nper risolvere i tuoi problemi.";
-    }
-  }
-});
 
 // Animazioni in entrata
 const items = document.querySelectorAll('.fade-in, .left, .right');
