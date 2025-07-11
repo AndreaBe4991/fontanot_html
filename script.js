@@ -171,3 +171,38 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+document.querySelectorAll('.servizio').forEach(element => {
+  element.addEventListener('click', function(event) {
+    event.preventDefault();
+
+    // Provo a prendere href o data-target
+    let targetId = this.getAttribute('href') || this.getAttribute('data-target');
+
+    if (!targetId) {
+      console.warn('Elemento senza href o data-target:', this);
+      return;
+    }
+
+    // Se targetId inizia con # lo rimuovo
+    if (targetId.startsWith('#')) targetId = targetId.substring(1);
+
+    const target = document.getElementById(targetId);
+
+    if (!target) {
+      console.warn('Elemento target non trovato con id:', targetId);
+      return;
+    }
+
+    // Scroll dolce verso il target
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    // Aggiungo la classe highlight dopo 500ms, la tolgo dopo 2s
+    setTimeout(() => {
+      target.classList.add('highlight');
+      setTimeout(() => {
+        target.classList.remove('highlight');
+      }, 2000);
+    }, 500);
+  });
+});
