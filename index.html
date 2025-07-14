@@ -92,26 +92,32 @@
 <!-- Navbar -->
 <nav class="navbar">
   <div class="container">
-    <!-- LOGO + TITOLO -->
     <div class="navbar-brand">
-      <img src="logo.jpg" alt="Logo dello Studio Legale Associato Fontanot a Trieste" loading="lazy" />
+      <img src="logo.jpg" alt="Logo Studio Legale Fontanot a Trieste" loading="lazy" />
       <h1><span>STUDIO LEGALE ASSOCIATO FONTANOT</span></h1>
     </div>
 
-    <!-- Hamburger Icon -->
+    <!-- Hamburger Icon SVG -->
     <button class="menu-toggle" aria-label="Apri Menu">
-      <i class="fas fa-bars"></i>
+      <svg class="hamburger" viewBox="0 0 100 100" width="30">
+        <path class="line top" d="M 30,33 H 70" />
+        <path class="line middle" d="M 30,50 H 70" />
+        <path class="line bottom" d="M 30,67 H 70" />
+      </svg>
     </button>
 
     <!-- Links -->
     <ul class="nav-links">
-      <li data-aos="zoom-in-up"><a href="#casa"><i class="fa-solid fa-house-chimney"></i> Home</a></li>
-      <li data-aos="zoom-in-up"><a href="#servizi"><i class="fa-solid fa-gavel"></i> Servizi</a></li>
-      <li data-aos="zoom-in-up"><a href="#chi-siamo"><i class="fa-solid fa-people-group"></i>Chi siamo</a></li>
-      <li data-aos="zoom-in-up"><a href="#contatti"><i class="fa-solid fa-envelope-circle-check"></i>Contatti</a></li>
+      <li><a href="#casa"><i class="fa-solid fa-house-chimney"></i> Home</a></li>
+      <li><a href="#servizi"><i class="fa-solid fa-gavel"></i> Servizi</a></li>
+      <li><a href="#chi-siamo"><i class="fa-solid fa-people-group"></i> Chi siamo</a></li>
+      <li><a href="#contatti"><i class="fa-solid fa-envelope-circle-check"></i> Contatti</a></li>
     </ul>
   </div>
 </nav>
+
+<!-- Overlay -->
+<div class="menu-overlay"></div>
 
 <!-- Pulsante Contatti Flottante -->
 <div class="contact-float" data-aos="zoom-in-up">

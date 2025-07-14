@@ -14,37 +14,25 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Menu mobile toggle
-  const toggle = document.querySelector(".menu-toggle");
-  const navLinks = document.querySelector(".nav-links");
-  const links = navLinks.querySelectorAll("a");
-  let closeTimeout;
+const toggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+const overlay = document.querySelector('.menu-overlay');
+const links = navLinks.querySelectorAll("a");
 
-  function startCloseTimer() {
-    clearTimeout(closeTimeout);
-    closeTimeout = setTimeout(() => {
-      navLinks.classList.remove("active");
-    }, 7000);
-  }
+toggle.addEventListener("click", () => {
+  toggle.classList.toggle("active");
+  navLinks.classList.toggle("active");
+  overlay.classList.toggle("active");
+});
 
-  toggle.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-    navLinks.classList.contains("active") ? startCloseTimer() : clearTimeout(closeTimeout);
-  });
+overlay.addEventListener("click", closeMenu);
+links.forEach(link => link.addEventListener("click", closeMenu));
 
-  links.forEach(link => {
-    link.addEventListener("click", () => {
-      navLinks.classList.remove("active");
-      clearTimeout(closeTimeout);
-    });
-  });
-
-  navLinks.addEventListener("click", () => {
-    if (navLinks.classList.contains("active")) {
-      startCloseTimer();
-    }
-  });
-
+function closeMenu() {
+  toggle.classList.remove("active");
+  navLinks.classList.remove("active");
+  overlay.classList.remove("active");
+}
   // Mostra/chiudi icone contatti
   const toggleBtn = document.getElementById("toggleContact");
   const icons = document.getElementById("contactIcons");
