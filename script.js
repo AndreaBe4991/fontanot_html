@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // Menu mobile
 const toggle = document.querySelector(".menu-toggle");
 const navLinks = document.querySelector(".nav-links");
 const overlay = document.querySelector('.menu-overlay');
@@ -33,6 +34,7 @@ function closeMenu() {
   navLinks.classList.remove("active");
   overlay.classList.remove("active");
 }
+
   // Mostra/chiudi icone contatti
   const toggleBtn = document.getElementById("toggleContact");
   const icons = document.getElementById("contactIcons");

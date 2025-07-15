@@ -161,6 +161,7 @@ h4 {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   position: static;
   z-index: 999;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 
 .navbar .container {
@@ -207,9 +208,9 @@ h4 {
   content: '';
   position: absolute;
   left: 0;
-  bottom: -2px;
+  bottom: -5px;
   width: 0;
-  height: 1px;  /* spessore sottile */
+  height: 2px;  /* spessore sottile */
   background-color: #0055a5;
   transition: width 0.3s ease;
 }
@@ -1098,6 +1099,8 @@ h4 {
   background-color: #003366;
   color: white;
   padding: 60px 20px;
+   border-top: 4px solid #0084af;
+   text-align: center;
 }
 
 .footer a {
@@ -1107,19 +1110,32 @@ h4 {
 }
 
 .footer a:hover {
-  text-decoration: underline;
+  color: #1a8bbc;
+  text-decoration: none;
 }
 
 .footer h4 {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   color: #ffffff;
-  font-size: 1.3rem;
+  font-size: 1.6rem;
 }
 
 .footer-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 40px;
+}
+
+.footer-grid > div,
+.footer-grid > section {
+  background-color: #ffffff0a;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.footer-grid > div:last-child {
+  border-right: none;
 }
 
 .footer-form form {
@@ -1131,7 +1147,9 @@ h4 {
 .footer-form input,
 .footer-form textarea {
   padding: 10px;
-  border: none;
+    background-color: #ffffff12;
+  color: white;
+  border: 1px solid #ffffff33;
   border-radius: 6px;
   font-size: 1rem;
   resize: vertical;
@@ -1153,12 +1171,15 @@ h4 {
 .footer-form button:hover {
   background-color: #149e82;
 }
+.footer-form input::placeholder,
+.footer-form textarea::placeholder {
+  color: #ddd;
+}
 
 .footer-mappa iframe {
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
-.footer h4 i,
 .footer p i,
 .footer a i {
   margin-right: 8px;
@@ -1166,7 +1187,13 @@ h4 {
   text-align: center;
   display: inline-block;
   vertical-align: middle;
-  font-size: 1.2rem;
+    font-size: 1.1rem;
+    color: #d3d3d3;
+}
+.footer h4 i {
+  margin-right: 4px;
+  color: #ffffff;
+  font-size: 1.5rem;
 }
 
 .footer p,
@@ -1259,24 +1286,52 @@ h4 {
   /* Navbar */
   .menu-toggle { display: block; }
 
+  /* Nascondi menu desktop */
   .nav-links {
     position: fixed;
     top: 0;
     right: -100%;
-    height: 50%;
-    width: 40%;
-    background-color: #e6e6e6;
+    height:35%;
+    width: 50vw;
+    background: linear-gradient(135deg, #1d83ae, #0065b8);
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 2rem;
     transition: right 0.3s ease;
-    box-shadow: -4px 0 12px rgba(0,0,0,0.15);
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.15);
+    border-radius: 12px 0 0 12px;
     z-index: 999;
+    padding: 2rem 1.5rem;
   }
-
+  /* Menu attivo a schermo */
   .nav-links.active {
     right: 0;
+  }
+  
+  /* Link stile mobile */
+.nav-links li a {
+    font-size: 1rem;
+    color: white;
+    font-weight: 400;
+    padding: 0.6rem 1rem;  /* più spazio interno */
+    text-transform:capitalize;
+    border-radius: 30px;
+    background: linear-gradient(90deg, #0055a5 0%, #004f77 100%);
+    width: 160px;  /* leggermente più largo */
+    text-align: center;
+    display: block;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+  .nav-links li a:hover,
+  .nav-links li a:focus {
+    background: linear-gradient(90deg, #027fbc 0%, #0055a5 100%);
+    color: #e0f0f9;
+    box-shadow: 0 6px 14px rgba(0, 85, 165, 0.8);
+    text-decoration: none;
+  }
+  .nav-links li i {
+    display: none;
   }
 
 /* HAMBURGER SVG ANIMATO */
